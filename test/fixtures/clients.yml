@@ -4,8 +4,28 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+chingachaguluka:
+  title:  Mr.
+  first_name:  Chinga
+  last_name:  Chaguluka
+  cell_phone1:  +265 999 989 777
+  cell_phone2:  +265 888 346 775
+  address:  P. O. Box 5402
+  city:  Limbe
+  country:  Malawi
+  email:  chinga.chaguluka@yahoo.com
+
+beatonnkhono:
+  title:  Mr.
+  first_name:  Beaton
+  last_name:  Nkhono
+  cell_phone1:  +265 999 989 430
+  address:  P. O. Box 1235
+  city:  Blantyre
+  country:  
+  email:  beatonnkhono@yahoo.com
+  account:  ibm
+
+kelvinnhlane:
+  last_name:  Nhlane
+  cell_phone1:  +265 995 000 010
