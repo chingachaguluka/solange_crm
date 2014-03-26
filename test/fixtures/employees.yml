@@ -1,0 +1,54 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+jessiekachule:
+  title:  Mrs.
+  first_name:  Jessie
+  last_name:  Kachule
+  cell_phone1:  +265 999 950 026
+  cell_phone2:  +265 888 950 026
+  address:  P. O. Box 5402
+  city:  Limbe
+  country:  Malawi
+  email:  jemika143@yahoo.com
+  employment_number: 000001
+  position:  Managing Director
+  date_of_birth: 16/05/1983
+  engaged_on:  01/10/2010
+  terminated_on:
+  status:  Active
+  temporary:  false
+  under_probation:  false
+  next_of_kin:  Zane Kachule
+  next_of_kin_phone: 0999 888 888
+  next_of_kin_email: zane@transport.gov.mw
+  next_of_kin_address: P. O. Box 123 Lilongwe
+
+
+anniechikopa:
+  title:  Miss
+  first_name:  Annie
+  last_name:  Chikopa
+  employment_number: 000002
+  position:  Hair Dresser
+  date_of_birth: 07/07/1979
+  engaged_on:  01/10/2010
+  terminated_on:
+  status:  Active
+  temporary:  false
+  under_probation:  false
+
+estermuhopa:
+  first_name:  Ester
+  last_name:  Muhopa
+  employment_number: 000003
+  position:  Receptionist
+  date_of_birth: 07/07/1977
+  engaged_on:  01/10/2010
+  terminated_on:
+  status:  Active
+  temporary:  false
+  under_probation:  false

@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+halfbodymassage:
+  name:  Half Body Massage
+  description:  Massage from waist up
+  selling_price:  3000
+  is_service: true
+  product_category: massage
+
+nurumassage:
+  name:  Nuru Massage
+  description:  Erotic oil massage
+  selling_price:  11500
+  is_service: true
+  product_category: massage
+
+purpleweave:
+  name:  Purple Weave
+  description:  Stylish and modern purple weave
+  selling_price: 6500
+  is_service: false
+  product_category: weave
+
+classicweave:
+  name:  Classic Weave
+  description:  Standard weave for every day use
+  selling_price: 4500
+  is_service: false
+  product_category: weave
