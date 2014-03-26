@@ -4,4 +4,6 @@ class SystemUser < ActiveRecord::Base
 
 	belongs_to    :employee
 	belongs_to   	:system_group
+	has_many 			:invoices
+	has_many  		:invoice_items
 end

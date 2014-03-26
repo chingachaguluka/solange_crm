@@ -1,0 +1,32 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+chingahalfbodymassage:
+  datetime_of_sale: <%= Time.now - 2.days %>
+  invoice:  chingamassage
+  product:  halfbodymassage
+  quantity: 1
+  selling_price: 3000
+  discount:  0
+  system_user: ester
+
+kelvinnurumassage:
+  datetime_of_sale: <%= Time.now - 1.days %>
+  invoice:  kelvinnurupurpleweave
+  product:  nurumassage
+  quantity: 1
+  selling_price: 11500
+  discount:  0
+  system_user: ester
+
+kelvinpurpleweave:
+  datetime_of_sale: <%= Time.now - 1.days %>
+  invoice:  kelvinnurupurpleweave
+  product:  purpleweave
+  quantity: 1
+  selling_price: 6500
+  discount:  0
+  system_user: ester

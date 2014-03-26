@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326113216) do
+ActiveRecord::Schema.define(version: 20140326135429) do
 
   create_table "account_statuses", force: true do |t|
     t.string   "name"
@@ -78,6 +78,30 @@ ActiveRecord::Schema.define(version: 20140326113216) do
     t.datetime "updated_at"
     t.string   "position"
     t.string   "status"
+  end
+
+  create_table "invoice_items", force: true do |t|
+    t.datetime "datetime_of_sale"
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.decimal  "selling_price"
+    t.decimal  "discount"
+    t.integer  "system_user_id"
+    t.integer  "invoice_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "invoices", force: true do |t|
+    t.datetime "datetime_of_invoice"
+    t.integer  "client_id"
+    t.integer  "system_user_id"
+    t.decimal  "total_amount"
+    t.decimal  "discount"
+    t.decimal  "amount_tendered"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "product_categories", force: true do |t|
