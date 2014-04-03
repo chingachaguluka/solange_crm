@@ -1,0 +1,21 @@
+<div class="panel-body">
+	<%= form_for @account do |f| %>
+		<div>
+	  		<%= f.label :name %>
+	  		<%= f.text_field :name, class: "form-control" %>
+		</div>
+	    <div>
+	      <%= f.label :address %>
+	      <%= f.text_area :address, class: "form-control" %>
+	    </div>
+		<div>
+  		<%= f.label :account_status %>
+  		<%= f.collection_select :account_status, AccountStatus.all, :id, :name, {prompt: true}, { class: "form-control" } %>
+		</div>
+		<p>
+		<div>
+			<%= f.submit @account.new_record? ? "Create Account" : "Update Account", class: "btn btn-default" %>
+		</div>
+	<% end %>	              
+</div>
+<!-- /.panel-body -->        
