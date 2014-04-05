@@ -15,6 +15,7 @@ class AccountsController < ApplicationController
 	def create
 		@account = Account.new(params[:account].permit(:name, :address ))
 		if @account.save
+			flash[:notice] = "Account Created"
 			redirect_to @account
 		else
 			render 'new'
@@ -29,9 +30,15 @@ class AccountsController < ApplicationController
 
 		@account = Account.find(params[:id])
 		if @account.update(params[:account].permit(:name, :address ))
+			flash[:notice] = "Account Updated"
 			redirect_to @account
 		else
 			render 'edit'
 		end
+	end
+
+	def destroy
+		Account.find(params[:id]).destroy
+		redirect_to accounts_url
 	end
 end

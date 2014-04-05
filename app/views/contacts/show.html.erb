@@ -1,4 +1,4 @@
-	<div id="page-wrapper">
+
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header"><%= "#{@contact.first_name}  #{@contact.last_name}" %></h1>
@@ -37,7 +37,11 @@
 	                    </tr>
 	                     <tr>
 	                    	<td>Parent Account:</td>
-	                    	<td> Note: Company association to be resolved </td> %>
+                        <% if @contact.account_id.present? %>
+	                    	    <td><%= @contact.account.name %></td> %>
+                        <% else %>
+                            <td> Not Assigned </td> %>
+                        <% end %>
 	                    </tr>
                     </tbody>
                   </table>
@@ -58,8 +62,8 @@
               <div class="panel-body">
               	<p><%= link_to "All Contacts", contacts_path %></p>
               	<p><%= link_to "Edit Contact", edit_contact_path(@contact) %></p>
-              	<p><%= link_to "New Contact", new_contact_path %></p>  
-              	<p><%= link_to "Delete Contact", "#" %></p>
+              	<p><%= link_to "Delete Contact", @contact, method: :delete, data: { confirm: "You sure?" } %></p>
+                <p><%= link_to "New Contact", new_contact_path %></p>
               </div>
               <!-- /.panel-body -->        
             </div>

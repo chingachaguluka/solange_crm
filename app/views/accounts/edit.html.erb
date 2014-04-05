@@ -1,4 +1,15 @@
-	<div id="page-wrapper">
+    <!-- display error on page if any -->
+    <% if @account.errors.any? %>
+        <div class="alert alert-danger alert-dismissable">
+            <p>Please correct the following <%= pluralize(@account.errors.count, "error") %>:</p>
+            <ul>
+                <% @account.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Edit Account</h1>
@@ -24,7 +35,8 @@
             <div class="panel panel-primary">
             <!-- /.panel-heading -->
             <div class="panel-body">
-                <p><%= link_to "All Accounts", accounts_path %></p>  
+                <p><%= link_to "All Accounts", accounts_path %></p>
+                <p><%= link_to "Delete Account", @account, method: :delete, data: { confirm: "You sure?" } %></p>
             </div>
             <!-- /.panel-body -->        
           </div>

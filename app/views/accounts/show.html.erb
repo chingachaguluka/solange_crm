@@ -1,4 +1,4 @@
-	<div id="page-wrapper">
+
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header"><%= "#{@account.name}" %></h1>
@@ -25,7 +25,11 @@
 	                    </tr>
 	                    <tr>
 	                    	<td>Status:</td>
-	                    	<td>Status</td>
+	                    	<% if @account.account_status_id.present? %>
+                            <td><%= @account.account_status.name %></td> %>
+                        <% else %>
+                            <td> Not Assigned </td> %>
+                        <% end %>
 	                    </tr>
                     </tbody>
                   </table>
@@ -45,7 +49,7 @@
               	<p><%= link_to "All Accounts", accounts_path %></p>
               	<p><%= link_to "Edit Account", edit_account_path(@account) %></p>
               	<p><%= link_to "New Account", new_account_path %></p>  
-              	<p><%= link_to "Delete Account", "#" %></p>
+              	<p><%= link_to "Delete Account", @account, method: :delete, data: { confirm: "You sure?" } %></p>
               </div>
               <!-- /.panel-body -->        
             </div>

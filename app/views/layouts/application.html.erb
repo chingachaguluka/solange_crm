@@ -88,21 +88,17 @@
                     <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> Sales</a> 
                     <!-- <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>  -->
                 </li>
-
                 <li>
-                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Clients Management<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                        	<%= link_to "Clients", clients_path %>
-                        </li>
-                        <li>
-                            <%= link_to "Accounts", accounts_path %>
-                        </li>
-                        <li>
-                            <%= link_to "Contacts", contacts_path %>
-                        </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
+                    <%= link_to "Clients", clients_path %> 
+                    <!-- <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>  -->
+                </li>
+                <li>
+                    <%= link_to "Accounts", accounts_path %>
+                    <!-- <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>  -->
+                </li>
+                <li>
+                    <%= link_to "Contacts", contacts_path %> 
+                    <!-- <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>  -->
                 </li>
 
             </ul>
@@ -111,8 +107,20 @@
         <!-- /.sidebar-collapse -->
     </nav>
     <!-- /.navbar-static-side -->
+    
+    <div id="page-wrapper"> <!-- main wrapper for content area -->
+        <div class="row">
+            <!-- Display flash messages        -->
+            <% [:notice, :alert].each do |level| %>
+                <% if flash[level] %>
+                    <div class="alert alert-dismissable <%= flash[level] == :notice ? "alert-success" : "alert-danger" %>">
+                        <%= flash[level] %>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
 
-		<%= yield %>
+    	<%= yield %>
 
 </div>
 

@@ -1,4 +1,15 @@
-	<div id="page-wrapper">
+    <!-- display error on page if any -->
+    <% if @client.errors.any? %>
+        <div class="alert alert-danger alert-dismissable">
+            <p>Please correct the following <%= pluralize(@client.errors.count, "error") %>:</p>
+            <ul>
+                <% @client.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Edit Client</h1>
@@ -26,7 +37,7 @@
             <div class="panel-body">
                 <p><%= link_to "All Clients", clients_path %></p>
                 <p><%= link_to "New Client", new_client_path %></p>
-                <p><%= link_to "Delete Client", "#" %></p>
+                <p><%= link_to "Delete Client", @client, method: :delete, data: { confirm: "You sure?" } %></p>
             </div>
             <!-- /.panel-body -->        
           </div>
