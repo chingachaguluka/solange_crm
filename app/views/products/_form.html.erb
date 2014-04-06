@@ -1,0 +1,29 @@
+<div class="panel-body">
+	<%= form_for @product do |f| %>
+		<div>
+	  		<%= f.label :name %>
+	  		<%= f.text_field :name, class: "form-control" %>
+		</div>
+	    <div>
+	      <%= f.label :description %>
+	      <%= f.text_area :description, class: "form-control" %>
+	    </div>
+	    <div>
+	      <%= f.label :selling_price, "Price (MK)" %>
+	      <%= f.text_field :selling_price, class: "form-control" %>
+	    </div>
+	    <div>
+	      <%= f.label :is_service %>
+	      <%= f.check_box :is_service %>
+	    </div>
+	    <div>
+	    	<%= f.label :prodct_category_id %>
+	      	<%= f.collection_select :product_category_id, ProductCategory.all, :id, :name, { prompt: true}, { class: "form-control"} %>
+	    </div>
+		<p>
+		<div>
+			<%= f.submit @product.new_record? ? "Create Product" : "Update Product", class: "btn btn-default" %>
+		</div>
+	<% end %>	              
+</div>
+<!-- /.panel-body -->        

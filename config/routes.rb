@@ -16,6 +16,8 @@ SolangeCrm::Application.routes.draw do
   resources :clients
   resources :accounts
   resources :contacts
+  resources :products
+  resources :product_categories
   resources :system_groups
   resources :system_users
   resources :employees

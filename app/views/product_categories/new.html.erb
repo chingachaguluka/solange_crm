@@ -1,0 +1,47 @@
+    <!-- display error on page if any -->
+    <% if @product_category.errors.any? %>
+        <div class="alert alert-danger alert-dismissable">
+            <p>Please correct the following <%= pluralize(@product_category.errors.count, "error") %>:</p>
+            <ul>
+                <% @product_category.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">New Product Category</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-9 col-md-9">
+          <div class="panel panel-primary">
+            <!-- /.panel-heading -->
+            <div class="panel-heading">
+                Create New Product Category
+            </div>
+
+            <%= render 'form' %>
+
+            </div>
+          <!-- /.panel -->
+          </div>
+        <!-- /.col-lg-9 -->
+        <div class="col-lg-3 col-md-3">
+            <div class="panel panel-primary">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <p><%= link_to "All Product Category", product_categories_path %></p>  
+            </div>
+            <!-- /.panel-body -->        
+          </div>
+            <!-- /.panel -->
+        </div>
+        <!-- end div col-lg-3 -->
+    </div>
+    <!-- /.row -->
+  </div>

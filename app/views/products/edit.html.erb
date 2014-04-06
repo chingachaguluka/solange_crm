@@ -1,0 +1,48 @@
+    <!-- display error on page if any -->
+    <% if @product.errors.any? %>
+        <div class="alert alert-danger alert-dismissable">
+            <p>Please correct the following <%= pluralize(@product.errors.count, "error") %>:</p>
+            <ul>
+                <% @product.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Edit Product</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-9 col-md-9">
+          <div class="panel panel-primary">
+            <!-- /.panel-heading -->
+            <div class="panel-heading">
+                Edit Product
+            </div>
+
+            <%= render 'form' %>
+
+            </div>
+          <!-- /.panel -->
+          </div>
+        <!-- /.col-lg-9 -->
+        <div class="col-lg-3 col-md-3">
+            <div class="panel panel-primary">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <p><%= link_to "All Products", products_path %></p>
+                <p><%= link_to "Delete Product", @product, method: :delete, data: { confirm: "You sure?" } %></p>
+            </div>
+            <!-- /.panel-body -->        
+          </div>
+            <!-- /.panel -->
+        </div>
+        <!-- end div col-lg-3 -->
+    </div>
+    <!-- /.row -->
+  </div>
