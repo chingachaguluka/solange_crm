@@ -1,0 +1,92 @@
+            <div class="panel-body">
+              <%= form_for @employee do |f| %>
+                <div>
+                  <%= f.label :title %>
+                  <%= f.select :title, ["Dr.", "Mr.", "Mrs.", "Ms.", "Sir", "Prof."], {prompt: true}, { class: "form-control" } %>
+                </div>
+                <div>
+                  <%= f.label :first_name %>
+                  <%= f.text_field :first_name, class: "form-control" %>
+                </div>
+                <div>
+                  <%= f.label :last_name %>
+                  <%= f.text_field :last_name, class: "form-control" %>
+                </div>
+                <div>
+                  <%= f.label :cell_phone1, "Cell(1)" %>
+                  <%= f.text_field :cell_phone1, class: "form-control"  %>
+                </div>
+                <div>
+                  <%= f.label :cell_phone2, "Cell(2)" %>
+                  <%= f.text_field :cell_phone2, class: "form-control" %>
+                </div>
+                <div>
+                  <%= f.label :address %>
+                  <%= f.text_field :address, class: "form-control" %>
+                </div><div>
+                  <%= f.label :city %>
+                  <%= f.text_field :city, class: "form-control" %>
+                </div>
+                <div>
+                  <%= f.label :country %>
+                  <%= f.text_field :country, class: "form-control" %>
+                </div>
+                <div>
+                  <%= f.label :email %>
+                  <%= f.text_field :email, class: "form-control" %>
+                </div>
+
+                <div>
+                  <%= f.label :position %>
+                  <%= f.text_field :position, class: "form-control"  %>
+                </div>
+                <div>
+                  <%= f.label :employment_number, "Employment #" %>
+                  <%= f.text_field :employment_number, class: "form-control" %>
+                </div>
+                <div>
+                  <%= f.label :date_of_birth, "DOB" %> <p>
+                  <%= f.date_select :date_of_birth, { class: "form-control" } %>
+                </div><div>
+                  <%= f.label :engaged_on, "Engagement Date" %> <p>
+                  <%= f.date_select :engaged_on, class: "form-control" %>
+                </div>
+                <div>
+                  <%= f.label :terminated_on, "Termination Date" %> <p>
+                  <%= f.date_select :terminated_on, class: "form-control" %>
+                </div>
+                <div>
+                  <%= f.label :temporary, "Temporary?" %>
+                  <%= f.check_box :temporary %>
+                </div>
+                <div>
+                  <%= f.label :under_probation %>
+                  <%= f.check_box :under_probation %>
+                </div>
+                <div>
+                  <%= f.label :next_of_kin %>
+                  <%= f.text_field :next_of_kin, class: "form-control" %>
+                </div>
+                <div>
+                  <%= f.label :next_of_kin_phone, "Next of Kin's Phone" %>
+                  <%= f.text_field :next_of_kin_phone, class: "form-control" %>
+                </div><div>
+                  <%= f.label :next_of_kin_address, "Next of Kin's Address" %>
+                  <%= f.text_field :next_of_kin_address, class: "form-control" %>
+                </div>
+                <div>
+                  <%= f.label :next_of_kin_email, "Next of Kin's Email" %>
+                  <%= f.text_field :next_of_kin_email, class: "form-control" %>
+                </div>
+                <div>
+                  <%= f.label :status %>
+                  <%= f.select :status, ['Active', 'On Leave', 'Suspended', 'Terminated'], { prompt: true}, {class: "form-control"} %>
+                </div>
+
+                <p>
+                <div>
+                  <%= f.submit @employee.new_record? ? "Create Employee" : "Update Employee", class: "btn btn-default" %>
+                </div>
+              <% end %>               
+            </div>
+            <!-- /.panel-body -->        

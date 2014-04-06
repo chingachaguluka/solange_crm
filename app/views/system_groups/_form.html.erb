@@ -1,0 +1,13 @@
+<div class="panel-body">
+	<%= form_for @system_group do |f| %>
+		<div>
+	  		<%= f.label :name %>
+	  		<%= f.text_field :name, class: "form-control" %>
+		</div>
+		<p>
+		<div>
+			<%= f.submit @system_group.new_record? ? "Create System Group" : "Update System Group", class: "btn btn-default" %>
+		</div>
+	<% end %>	              
+</div>
+<!-- /.panel-body -->        

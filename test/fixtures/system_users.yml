@@ -7,11 +7,13 @@
 jessie:
   username:  jessie
   password:  jessie
+  disabled:  false
   employee:  jessiekachule
   system_group:  administrators
 
 ester:
   username:  ester
   password:  ester
+  disabled:  true
   employee:  estermuhopa
   system_group: operators

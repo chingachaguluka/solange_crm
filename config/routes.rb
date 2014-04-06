@@ -16,6 +16,9 @@ SolangeCrm::Application.routes.draw do
   resources :clients
   resources :accounts
   resources :contacts
+  resources :system_groups
+  resources :system_users
+  resources :employees
   
 
   # Example resource route with options:

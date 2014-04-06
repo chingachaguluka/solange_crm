@@ -1,0 +1,66 @@
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header"><%= "#{@system_user.username}" %></h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-9 col-md-9">
+            <div class="panel panel-primary">
+              <!-- /.panel-heading -->
+
+              <div class="panel-body">
+              	<div class="table-responsive">
+                  <table class="table table-striped table-bordered table-hover">
+                    <tbody>
+	                    <tr>
+	                    	<td>Username:</td>
+	                    	<td><%= @system_user.username %></td>
+	                    </tr>
+	                    <tr>
+	                    	<td>Group:</td>
+	                    	<td><%= @system_user.system_group.name %></td>
+	                    </tr>
+	                    <tr>
+	                    	<td>Disabled:</td>
+	                    	<td><%= @system_user.disabled %></td>
+	                    </tr>
+	                    <tr>
+	                    	<td>Employee:</td>
+	                    	<td><%= "#{@system_user.employee.first_name} #{@system_user.employee.last_name}" %></td>
+	                    </tr>
+                    </tbody>
+                  </table>
+	              </div>
+	              <!-- /.table-responsive -->
+
+	              
+              </div>
+              <!-- /.panel-body -->        
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-9 -->
+        <div class="col-lg-3 col-md-3">
+        	<div class="panel panel-primary">
+              <!-- /.panel-heading -->
+
+              <div class="panel-body">
+              	<p><%= link_to "All System Users", system_users_path %></p>
+              	<p><%= link_to "Edit System User", edit_system_user_path(@system_user) %></p>
+              	<p><%= link_to "Delete System User", @system_user, method: :delete, data: { confirm: "You sure?" } %></p>
+                <p><%= link_to "New System User", new_system_user_path %></p>
+              </div>
+              <!-- /.panel-body -->        
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- end div col-lg-3 -->
+    </div>
+    <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
